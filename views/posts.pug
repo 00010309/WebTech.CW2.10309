@@ -11,7 +11,7 @@ block content
         div
             each post in posts
                 div
-                    a(href=`/posts/${posts.id}`) #{post.title}
+                    a(href=`/posts/${post.id}`) #{post.title}
                     div
                         a(href="/update" style="margin: 5px") Edit
                         a(href="/delete" style="margin: 5px; background: red") Delete

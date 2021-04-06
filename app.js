@@ -16,8 +16,18 @@ app.get('/posts', (req, res)=>{
         res.render('posts', {posts: posts})
     })
 })
-app.get('/posts/postdetail', (req, res)=>{
-    res.render('postdetail')
+app.get('/posts/:id', (req, res)=>{
+    const id = req.params.id
+    fs.readFile('./data/posts.json', (err, data)=>{
+        if(err) throw err 
+
+        const posts = JSON.parse(data)
+
+        const post = posts.filter(post=>post.id == id)[0]
+
+        res.render('postdetail', {post: post})
+    })
+
 })
 app.get('/create', (req, res)=>{
     res.render('create')
@@ -34,7 +44,7 @@ app.post('/create', (req, res)=>{
                 if(err) throw err 
 
                 const posts = JSON.parse(data)
-                
+
                 posts.push({
                     id: id(),
                     author: author,
@@ -87,8 +97,18 @@ app.get('/drafts', (req, res)=>{
         res.render('drafts', {drafts: drafts})
     })
 })
-app.get('/drafts/draftdetail', (req, res)=>{
-    res.render('draftdetail')
+app.get('/drafts/:id', (req, res)=>{
+    const id = req.params.id
+    fs.readFile('./data/drafts.json',(err,data)=>{
+        if(err) throw err 
+        
+        const drafts = JSON.parse(data)
+
+        const draft = drafts.filter(draft=>draft.id == id)[0]
+
+        res.render('draftdetail', {draft: draft})
+    })
+
 })
 app.get('/update', (req, res)=>{
     res.render('update')

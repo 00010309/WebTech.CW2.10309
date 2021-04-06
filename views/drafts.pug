@@ -8,13 +8,13 @@ block content
                 h2 Drafts
     section 
         div
-                each draft in drafts
+            each draft in drafts
+                div
+                    a(href=`/drafts/${draft.id}`) #{draft.title}
                     div
-                        a(href=`/drafts/${drafts.id}`) #{draft.title}
-                        div
-                            a(href="#") Post
-                            a(href="/update") Edit
-                            a(href="#") Delete
+                        a(href="#") Post
+                        a(href="/update") Edit
+                        a(href="#") Delete
                                
     section
         div
