@@ -12,22 +12,21 @@ block content
                 div 
                     div
                         form(method='post')
+                            if error
+                                p.errorwithpost There are empty boxes. Try again
+                            if success
+                                p.successwithpost The item has been updated
                             label Author
                             div
-                                input(type='text' name='Author')
+                                input(type='text' name='author')
                             label
                             div
-                                input.form-control(type='text' name='Title')
+                                input.form-control(type='text' name='title')
                             label Post
                             div
-                                textarea(rows='10' name='Post')
+                                textarea(rows='10' name='post')
                             div
-                                if error
-                                    p.errorwithpost There are empty boxes. Try again
-                                if success
-                                    p.successwithpost The item has been updated
                                 button(type='submit') Save
-                                button(type='submit') Save as a draft
     section
         div
             div

@@ -11,10 +11,14 @@ block content
             div
                 div 
                     div
-                        form
+                        form(method='post')
+                            if error
+                                p.errorwithpost There are empty boxes. Try again
+                            if success
+                                p.successwithpost The post has been published
                             label Author
                             div
-                                input.(type='text' name='Author')
+                                input(type='text' name='Author')
                             label Title
                             div
                                 input(type='text' name='Title')
@@ -22,12 +26,8 @@ block content
                             div
                                 textarea.form-control.flex-grow-1(rows='10' name='Post')
                             div
-                                if error
-                                    p.errorwithpost There are empty boxes. Try again
-                                if success
-                                    p.successwithpost The post has been published
-                                button(type='submit') Post
-                                button(type='submit') Save as a draft
+                                button(type='submit' value='Post') Post
+                                button(type='submit' value='Draft') Save as a draft
     section
         div
             div
