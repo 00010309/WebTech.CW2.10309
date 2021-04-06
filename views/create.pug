@@ -22,6 +22,10 @@ block content
                             div
                                 textarea.form-control.flex-grow-1(rows='10' name='Post')
                             div
+                                if error
+                                    p.errorwithpost There are empty boxes. Try again
+                                if success
+                                    p.successwithpost The post has been published
                                 button(type='submit') Post
                                 button(type='submit') Save as a draft
     section
