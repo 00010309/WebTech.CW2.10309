@@ -1,0 +1,32 @@
+extends layout.pug
+block title 
+    title Update page
+block content 
+    header
+        div
+            div
+                h2 Update
+    section
+        div
+            div
+                div 
+                    div
+                        form(method='post')
+                            label Author
+                            div
+                                input(type='text' name='Author')
+                            label
+                            div
+                                input.form-control(type='text' name='Title')
+                            label Post
+                            div
+                                textarea(rows='10' name='Post')
+                            div
+                                button(type='submit') Save
+                                button(type='submit') Save as a draft
+    section
+        div
+            div
+                div
+                    div
+                        h2 Update your post or draft in the most convenient way.

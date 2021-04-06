@@ -1,0 +1,24 @@
+extends layout.pug
+block title 
+    title Drafts
+block content
+    header
+        div
+            div
+                h2 Drafts
+    section 
+        div
+                each draft in drafts
+                    div
+                        a(href="/drafts/draftdetail")= draft
+                        div
+                            a(href="#") Post
+                            a(href="/update") Edit
+                            a(href="#") Delete
+                               
+    section
+        div
+            div
+                div
+                    div
+                        h2 Read, post, edit and delete your drafts in the most convenient way&nbsp;

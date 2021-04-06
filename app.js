@@ -1,8 +1,9 @@
 var express = require('express')
 var app = express();
-
+app.set('view engine','pug')
+app.use('/static', express.static('public'))
 app.get('/', (req, res)=>{
-    res.send('Hello')
+    res.render('homepage')
 })
 
 app.listen(1000, err=>{

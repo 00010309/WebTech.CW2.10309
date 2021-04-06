@@ -1,0 +1,23 @@
+extends layout.pug
+block title 
+    title All posts
+block content
+    header
+        div
+            div
+                h2 All posts
+    
+    section 
+        div
+                each post in posts
+                    div
+                        a(href="/posts/postdetail")= post
+                        div
+                            a(href="/update" style="margin: 5px") Edit
+                            a(href="#" style="margin: 5px; background: red") Delete
+    section
+        div
+            div
+                div
+                    div
+                        h2 Read, edit and delete your posts in the most convenient way&nbsp;

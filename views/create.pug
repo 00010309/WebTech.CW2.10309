@@ -1,0 +1,32 @@
+extends layout.pug
+block title 
+    title Create a blog
+block content 
+    header
+        div
+            div
+                h2 Create a post
+    section
+        div
+            div
+                div 
+                    div
+                        form
+                            label Author
+                            div
+                                input.(type='text' name='Author')
+                            label Title
+                            div
+                                input(type='text' name='Title')
+                            label Post
+                            div
+                                textarea.form-control.flex-grow-1(rows='10' name='Post')
+                            div
+                                button(type='submit') Post
+                                button(type='submit') Save as a draft
+    section
+        div
+            div
+                div
+                    div
+                        h2 Create a post which you may also save as draft in the most convenient way.
