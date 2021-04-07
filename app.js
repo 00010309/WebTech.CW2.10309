@@ -169,6 +169,16 @@ app.get('/:id/deletedraft', (req,res)=>{
     })
 })
 
+app.get('/api/v1/posts', (req,res)=>{
+    fs.readFile('./data/posts.json',(err,data)=>{
+        if(err) throw err 
+        
+        const posts = JSON.parse(data)
+
+        res.json(posts)
+    })
+})
+
 app.listen(PORT, err=>{
     err ? console.log(err) : console.log("The server is running on the port " + PORT)
 })
