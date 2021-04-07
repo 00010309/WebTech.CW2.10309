@@ -4,12 +4,13 @@
   "description": "blog",
   "main": "app.js",
   "scripts": {
-    "test": "node app"
+    "start": "node app.js"
   },
   "author": "10309",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "pug-cli": "^1.0.0-alpha6"
   }
 }
