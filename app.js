@@ -140,7 +140,7 @@ app.get('/:id/deletepost', (req,res)=>{
 
         const posts = JSON.parse(data)
 
-        const filteredposts = posts.filter(post=> post.id != id)
+        const filteredposts = posts.filter(post=> post.id != id && post.status == true)
 
         fs.writeFile('./data/posts.json', JSON.stringify(filteredposts), (err, data)=>{
             if(err) throw err
@@ -159,7 +159,7 @@ app.get('/:id/deletedraft', (req,res)=>{
 
         const drafts = JSON.parse(data)
 
-        const filtereddrafts = drafts.filter(draft=> draft.id != id)
+        const filtereddrafts = drafts.filter(draft=> draft.id != id && draft.status != true)
 
         fs.writeFile('./data/posts.json', JSON.stringify(filtereddrafts), (err, data)=>{
             if(err) throw err

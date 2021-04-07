@@ -2,24 +2,24 @@ extends layout.pug
 block title 
     title Drafts
 block content
-    header
-        div
-            div
-                h2 Drafts
+    header.text-center.text-white.masthead(style='border-color: var(--gray);background: var(--purple);')
+        div.masthead-content
+            div.container
+                h2.masthead-subheading.mb-0(style='text-align: center;color: var(--white);') Drafts
     section 
-        div
+        div.container
             if deleted
                  span.errorwithpost Draft deleted
             each draft in drafts
-                div
-                    a(href=`/drafts/${draft.id}`) #{draft.title}
+                div.allposts.align-items-center
+                    a.text-black-50.lead(href=`/drafts/${draft.id}`) #{draft.title}
                     div
-                        a(href=`/${draft.id}/post`) Post
-                        a(href=`/${draft.id}/deletedraft`) Delete
+                        a.btn.btn-primary(href=`/${draft.id}/post` style="margin: 5px") Post
+                        a.btn.btn-secondary(href=`/${draft.id}/deletedraft` style="margin: 5px; background: red") Delete
                                
     section
-        div
-            div
-                div
-                    div
-                        h2 Read, post and delete your drafts in the most convenient way&nbsp;
+        div.container
+            div.row.align-items-center
+                div.col
+                    div.p-5
+                        h2.display-4.text-center(style='font-size: 30px;') Read, post and delete your drafts in the most convenient way&nbsp;

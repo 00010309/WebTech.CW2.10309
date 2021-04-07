@@ -6,20 +6,20 @@ html
         block title
         link(rel='stylesheet' href='/static/styles/style.css')
     body 
-        nav
-            div
-                a(href='/') WIUT_Blogger
-                button(data-toggle='collapse' data-target='#')
-                    span
-                div
-                    ul
-                        li
-                        a(href='/create') CREATE A POST
-                        li
-                        a(href='/posts') ALL POSTS
-                        li
-                        a(href='/drafts') DRAFTS
+        nav.navbar.navbar-dark.navbar-expand-lg.fixed-top.bg-dark.navbar-custom
+            div.container
+                a.navbar-brand(href='/') WIUT_Blogger
+                button.navbar-toggler(data-toggle='collapse' data-target='#navbarResponsive')
+                    span.navbar-toggler-icon
+                div#navbarResponsive.collapse.navbar-collapse
+                    ul.navbar-nav.ml-auto
+                        li.nav-item
+                        a.nav-link(href='/create') CREATE A POST
+                        li.nav-item
+                        a.nav-link(href='/posts') ALL POSTS
+                        li.nav-item
+                        a.nav-link(href='/drafts') DRAFTS
         block content
-        footer
-            div
-                p Copyright&nbsp;&copy; WIUT_Blogger 2021
+        footer.py-5.bg-black
+            div.container
+                p.text-center.text-white.m-0.small Copyright&nbsp;&copy; WIUT_Blogger 2021
