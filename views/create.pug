@@ -14,20 +14,22 @@ block content
                         form(method='post')
                             if error
                                 p.errorwithpost There are empty boxes. Try again
-                            if success
+                            if success_post
                                 p.successwithpost The post has been published
+                            if success_draft
+                                    p.successwithpost The draft has been saved
                             label Author
                             div
-                                input(type='text' name='Author')
+                                input(type='text' name='Author' placeholder="Write your name")
                             label Title
                             div
-                                input(type='text' name='Title')
+                                input(type='text' name='Title' placeholder="Write the title of the post")
                             label Post
                             div
-                                textarea.form-control.flex-grow-1(rows='10' name='Post')
+                                textarea.form-control.flex-grow-1(rows='10' name='Post' placeholder="Write the post")
                             div
-                                button(type='submit' value='Post') Post
-                                button(type='submit' value='Draft') Save as a draft
+                                button(type='submit' formaction="/createpost") Post
+                                button(type='submit' formaction="/createdraft") Save as a draft
     section
         div
             div

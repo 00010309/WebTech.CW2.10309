@@ -8,17 +8,18 @@ block content
                 h2 Drafts
     section 
         div
+            if deleted
+                 span.errorwithpost Draft deleted
             each draft in drafts
                 div
                     a(href=`/drafts/${draft.id}`) #{draft.title}
                     div
-                        a(href="#") Post
-                        a(href="/update") Edit
-                        a(href="#") Delete
+                        a(href=`/${draft.id}/post`) Post
+                        a(href=`/${draft.id}/deletedraft`) Delete
                                
     section
         div
             div
                 div
                     div
-                        h2 Read, post, edit and delete your drafts in the most convenient way&nbsp;
+                        h2 Read, post and delete your drafts in the most convenient way&nbsp;

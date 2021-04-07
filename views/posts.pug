@@ -9,15 +9,16 @@ block content
     
     section 
         div
+            if deleted
+                span.errorwithpost Post deleted
             each post in posts
                 div
                     a(href=`/posts/${post.id}`) #{post.title}
                     div
-                        a(href="/update" style="margin: 5px") Edit
-                        a(href="/delete" style="margin: 5px; background: red") Delete
+                        a(href=`/${post.id}/deletepost` style="margin: 5px; background: red") Delete
     section
         div
             div
                 div
                     div
-                        h2 Read, edit and delete your posts in the most convenient way&nbsp;
+                        h2 Read and delete your posts in the most convenient way&nbsp;
